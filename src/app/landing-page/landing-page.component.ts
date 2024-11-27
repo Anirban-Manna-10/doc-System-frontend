@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -21,7 +21,16 @@ export class LandingPageComponent implements OnInit {
     localStorage.removeItem('role');
 
     this.router.navigate(['/login']);
+  }
 
+  @ViewChild('sidebar') sidebar!: ElementRef;
+  @ViewChild('toggle') toggle!: ElementRef;
+
+  ngAfterViewInit(): void {
+    this.toggle.nativeElement.addEventListener("click", () => {
+      this.sidebar.nativeElement.classList.toggle("close");
+    });
+    
   }
 
 }

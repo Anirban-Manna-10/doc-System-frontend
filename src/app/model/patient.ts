@@ -7,8 +7,8 @@ export class Patient {
   type: String;
   bname:String;
   password: String;
-  bloodGroup: String;
-  gender: String;
+  bloodGroup: string;
+  gender: string;
   age: number;
   address: String;
 

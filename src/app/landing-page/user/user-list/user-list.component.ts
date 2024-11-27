@@ -37,16 +37,14 @@ export class UserListComponent implements OnInit {
     });
   }
   updateUser(id: number){
+    // ev.preventDefault();
     console.log(id);
     this.router.navigate(['/landing-page/update-user', id]);
   }
 
   deleteUser(id: number){
-    // console.log(id);
-    // this.router.navigate(['/landing-page/delete-user', id]);
-    this.userService.deleteUser(id).subscribe(
-      data => {
-        console.log(data);
+    // ev.preventDefault();
+    this.userService.deleteUser(id).subscribe(data => {
         this.getUsers();
       }, error => {
         console.log("Not Delete")

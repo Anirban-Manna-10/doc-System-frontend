@@ -46,18 +46,4 @@ export class PatientListComponent implements OnInit {
     )
   }
 
-
-  showpassword(type:any,index:any){
-    // this.admins[index].type='text'
-
-    if(type=='text'){
-      this.patients[index].type='password'
-      this.patients[index].bname='Show'
-    } else{
-      this.patients[index].type='text'
-      this.patients[index].bname='Hide'
-    }
-
-  }
-
 }

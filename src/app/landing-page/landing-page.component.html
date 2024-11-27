@@ -1,39 +1,91 @@
+<div class="body">
+  <nav #sidebar class="sidebar">
+      <header>
+          <div class="image-text">
+              <span class="image">
+                  <img src="../../assets/Logo.png" alt="">
+              </span>
 
-  <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
-    <a class="navbar-brand" routerLink="/landing-page/user-list">Doctor App</a>
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a routerLink="/landing-page/user-list" routerLinkActive="active" class="nav-link " style="margin-right: 10px;">User List</a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="/landing-page/doctor-list" routerLinkActive="active" class="nav-link " style="margin-right: 10px;">Doctor List</a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="/landing-page/patient-list" routerLinkActive="active" class="nav-link " style="margin-right: 10px;">Patient List</a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="/landing-page/admin-list" routerLinkActive="active" class="nav-link " style="margin-right: 10px;">Admin List</a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="/landing-page/appointment-list" routerLinkActive="active" class="nav-link " style="margin-right: 10px;">Appointment List</a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="/landing-page/availabilitydates-list" routerLinkActive="active" class="nav-link " style="margin-right: 10px;">AvailabilityDates List</a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="/landing-page/feedback-list" routerLinkActive="active" class="nav-link " style="margin-right: 10px;">Feedback List</a>
-      </li>
-      <button class="btn btn-danger" (click)="logout()">Logout</button>
-    </ul>
+              <div class="text logo-text">
+                  <span class="name">MediTalk</span>
+              </div>
+          </div>
+          <i #toggle class="bi bi-arrow-left-short toggle"></i>
+      </header>
+
+      <div class="menu-bar">
+          <div class="menu">
+              <ul class="menu-links">
+                  <li class="nav-link">
+                      <a routerLink="/landing-page/user-list" routerLinkActive="active">
+                          <i class="bi bi-house-door icon"></i>
+                          <span class="text nav-text">Users</span>
+                      </a>
+                  </li>
+
+                  <li class="nav-link">
+                      <a routerLink="/landing-page/doctor-list" routerLinkActive="active">
+                          <i class="bi bi-hospital icon"></i>
+                          <span class="text nav-text">Find Doctor</span>
+                      </a>
+                  </li>
+
+                  <li class="nav-link">
+                      <a routerLink="/landing-page/patient-list" routerLinkActive="active">
+                            <i class="bi bi-clipboard2-pulse icon"></i>
+                          <span class="text nav-text">Patients</span>
+                      </a>
+                  </li>
+
+                  <li class="nav-link">
+                    <a routerLink="/landing-page/appointment-list" routerLinkActive="active">
+                        <i class="bi bi-person-vcard icon"></i>
+                        <span class="text nav-text">Appointments</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                  <a routerLink="/landing-page/availabilitydates-list" routerLinkActive="active">
+                        <i class="bi bi-calendar2-check icon"></i>
+                      <span class="text nav-text">Availability Details</span>
+                  </a>
+              </li>
+
+              <li class="nav-link">
+                <a routerLink="/landing-page/feedback-list" routerLinkActive="active">
+                    <i class="bi bi-award icon"></i>
+                    <span class="text nav-text">Feedbacks</span>
+                </a>
+              </li>
+
+              </ul>
+          </div>
+
+          <div class="bottom-content">
+              <li class="logout">
+                  <a href="#" (click)="logout()">
+                      <i class="bi bi-box-arrow-left icon"></i>
+                      <span class="text nav-text">Logout</span>
+                  </a>
+              </li>                
+          </div>
+      </div>
   </nav>
 
+  <section class="home">
+    <nav class="headerNav row">
+        <a routerLink="profile" class="profileDrop">
+            <div class="userImage">
+                <img src="https://i.pinimg.com/564x/46/5e/bf/465ebfca31e4de4ea914f97b8058c1c3.jpg" class="userImage">
+            </div>
+            <p>User Name ...</p>
 
-    <router-outlet></router-outlet>
+            <i class="bi bi-caret-down-fill dropdownicon"></i>
+        </a>
+    </nav>
+        <router-outlet>
 
-<!-- 
-  <footer class="footer ">
-    <div class="container">
-      <span >All rights Reserved 2021 @DoctorApp Module </span>
-    </div>
-    </footer> -->
-
+        </router-outlet>
+      <!-- <div class="text">Dashboard Sidebar Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda corrupti, nobis numquam perspiciatis laboriosam officiis amet consectetur eius unde sit, tenetur labore praesentium libero illum ex incidunt quasi obcaecati voluptates.</div> -->
+  </section>
+</div>

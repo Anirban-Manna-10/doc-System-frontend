@@ -8,7 +8,7 @@ import { Doctor } from '../model/doctor';
 })
 export class DoctorService {
   private baseUrl="http://localhost:8080/doctor";
-  constructor(private httpclient: HttpClient) { }
+  constructor(private httpclient: HttpClient) {}
 
 
   createDoctor(doctor:Doctor): Observable<any>{
@@ -19,9 +19,11 @@ export class DoctorService {
   getDoctorList(): Observable<Doctor[]>{
     return this.httpclient.get<Doctor[]>(`${this.baseUrl}`);
   }
+
   getDoctorById(id: number): Observable<Doctor>{
     return this.httpclient.get<Doctor>(`${this.baseUrl}/${id}`);
   }
+
   updateDoctor(id: number, doctor: Doctor): Observable<Object>{
     return this.httpclient.put(`${this.baseUrl}`,doctor);
   }
