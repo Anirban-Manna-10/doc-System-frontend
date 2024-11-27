@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row justify-content-between align-items-center mt-5">
+    <div class="col-12 col-md-8">
+      <h1 class="doctor-list-heading">Doctor List</h1>
+    </div>
+    <div class="col-12 col-md-4 text-center text-md-right">
+      <button routerLink="/landing-page/create-doctor" class="btn btn-primary">
+        Add Doctor
+      </button>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div *ngFor="let doctor of doctors; let i = index" class="col-md-4 mb-4">
+      <div class="card" [ngStyle]="{ backgroundColor: i % 2 == 0 ? '#f2f2f2' : 'white' }">
+        <div class="card-body">
+          <h5 class="card-title">{{ doctor.doctorName }}</h5>
+          <p class="card-text">
+            <strong>Specialty:</strong> {{ doctor.speciality }}<br />
+            <strong>Location:</strong> {{ doctor.location }}<br />
+            <strong>Hospital:</strong> {{ doctor.hospitalName }}<br />
+            <strong>Mobile:</strong> {{ doctor.mobileNo }}<br />
+            <strong>Email:</strong> {{ doctor.email }}<br />
+          </p>
+          <div class="d-flex justify-content-between">
+            <button (click)="updateDoctor(doctor.doctorId)" class="btn btn-info">Update</button>
+            <button (click)="deleteDoctor(doctor.doctorId)" class="btn btn-danger">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
