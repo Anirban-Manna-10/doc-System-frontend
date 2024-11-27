@@ -1,46 +1,33 @@
 <div class="container">
-
-  <div class="row justify-content-center mt-5">
-    <h1> <u>Doctor List</u> </h1>
+  <div class="row justify-content-between align-items-center mt-5">
+    <div class="col-12 col-md-8">
+      <h1 class="doctor-list-heading">Doctor List</h1>
+    </div>
+    <div class="col-12 col-md-4 text-center text-md-right">
+      <button routerLink="/landing-page/create-doctor" class="btn btn-primary">
+        Add Doctor
+      </button>
+    </div>
   </div>
-  <button routerLink="/landing-page/create-doctor" class="btn btn-primary ml-auto ml-5 mb-3">
-    Add Doctor
-  </button>
-<table class="table table-striped " style="margin-bottom: 100px;">
-  <thead>
-    <tr>
-      <th>Doctor Id</th>
-      <th>Doctor Name</th>
-      <th>Speciality</th>
-      <th>Location</th>
-      <th>Hospital Name</th>
-      <th>Mobile No</th>
-      <th>Email</th>
-      <th>Password</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let doctor of doctors; let i=index">
-      <td>{{doctor.doctorId}}</td>
-      <td>{{doctor.doctorName}}</td>
-      <td>{{doctor.speciality}}</td>
-      <td>{{doctor.location}}</td>
-      <td>{{doctor.hospitalName}}</td>
-      <td>{{doctor.mobileNo}}</td>
-      <td>{{doctor.email}}</td>
 
-      <td><input name="{{i}}" readonly type="{{doctor.type}}" [ngStyle]="{backgroundColor: i%2==0  ? '#f2f2f2' : 'white'}" [(ngModel)]="doctor.password"  style="outline: none;border: none; " />
-      <button (click)="showpassword(doctor.type,i)">{{doctor.bname}}</button>
-
-
-      <td>
-        <button button (click) = "updateDoctor(doctor.doctorId)" class="btn btn-info" >Update</button>
-        <button button (click) = "deleteDoctor(doctor.doctorId)" class="btn btn-danger" style="margin-left: 2px;" >Delete</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
+  <div class="row mt-4">
+    <div *ngFor="let doctor of doctors; let i = index" class="col-md-4 mb-4">
+      <div class="card" [ngStyle]="{ backgroundColor: i % 2 == 0 ? '#f2f2f2' : 'white' }">
+        <div class="card-body">
+          <h5 class="card-title">{{ doctor.doctorName }}</h5>
+          <p class="card-text">
+            <strong>Specialty:</strong> {{ doctor.speciality }}<br />
+            <strong>Location:</strong> {{ doctor.location }}<br />
+            <strong>Hospital:</strong> {{ doctor.hospitalName }}<br />
+            <strong>Mobile:</strong> {{ doctor.mobileNo }}<br />
+            <strong>Email:</strong> {{ doctor.email }}<br />
+          </p>
+          <div class="d-flex justify-content-between">
+            <button (click)="updateDoctor(doctor.doctorId)" class="btn btn-info">Update</button>
+            <button (click)="deleteDoctor(doctor.doctorId)" class="btn btn-danger">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-

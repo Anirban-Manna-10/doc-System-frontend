@@ -1,0 +1,91 @@
+/* General container styling */
+.container {
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  
+  /* Card body styling */
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px;
+    text-align: left;
+  }
+  
+  /* Styling for the card */
+  .card {
+    border: 1px solid #e0e0e0; /* Light grey border for a cleaner look */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for a professional feel */
+    background-color: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease-in-out;
+  }
+  
+  /* Hover effect for card */
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Slightly darker shadow */
+  }
+  
+  /* Card title styling */
+  .card-title {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #2c3e50; /* Dark text color for the title */
+    margin-bottom: 10px;
+  }
+  
+  /* Card text styling */
+  .card-text {
+    font-size: 1em;
+    color: #555; /* Dark gray text for body content */
+    margin-bottom: 20px;
+
+  }
+  
+  /* Button styling */
+  .btn {
+    font-size: 1em;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease-in-out;
+  }
+  
+  /* Update button (Info) */
+  .btn-info,.btn-danger {
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s, transform 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn-info:hover,.btn-danger:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Delete button (Danger) */
+  /* .btn-danger {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+  } */
+  
+  /* Card responsiveness */
+  @media (max-width: 768px) {
+    .card {
+      width: 100%;
+    }
+  
+    .card-body {
+      padding: 20px;
+    }
+  }
+  
