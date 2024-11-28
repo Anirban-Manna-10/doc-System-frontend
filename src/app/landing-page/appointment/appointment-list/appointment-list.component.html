@@ -1,40 +1,33 @@
 <div class="container">
-
-  <div class="row justify-content-center mt-5">
-    <h1> <u>Appointment List</u> </h1>
+  <div class="row justify-content-between align-items-center mb-4">
+    <h1 class="appointment-list-title">Appointment List</h1>
+    <button routerLink="/landing-page/create-appointment" class="btn btn-primary add-appointment-btn">
+      Add Appointment
+    </button>
   </div>
-  <button routerLink="/landing-page/create-appointment" class="btn btn-primary ml-auto ml-5 mb-3">
-    Add Appointment
-  </button>
-<table class="table table-striped " style="margin-bottom: 100px;">
-  <thead>
-    <tr>
-      <th>Appointment Id</th>
-      <th>Patient Id</th>
-      <th>Doctor Id</th>
-      <th>Appointment Date</th>
-      <th>Appointment Status</th>
-      <th>Remark</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let appointment of appointments">
-      <td>{{appointment.appointmentId}}</td>
-      <td>{{appointment.patient.patientId}}</td>
-      <td>{{appointment.doctor.doctorId}}</td>
-      <td>{{appointment.appointmentDate}}</td>
-      <td>{{appointment.appointmentStatus}}</td>
-      <td>{{appointment.remark}}</td>
 
-
-      <td>
-        <button button (click) = "updateAppointment(appointment.appointmentId)" class="btn btn-info" >Update</button>
-        <button button (click) = "deleteAppointment(appointment.appointmentId)" class="btn btn-danger" style="margin-left: 2px;" >Delete</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
+  <div *ngFor="let appointment of appointments" class="appointment-card">
+    <div class="appointment-field">
+      <strong>Aptnt ID:</strong> {{ appointment.appointmentId }}
+    </div>
+    <div class="appointment-field">
+      <strong>Patient ID:</strong> {{ appointment.patient.patientId }}
+    </div>
+    <div class="appointment-field">
+      <strong>Doctor ID:</strong> {{ appointment.doctor.doctorId }}
+    </div>
+    <div class="appointment-field">
+      <strong>Date:</strong> {{ appointment.appointmentDate }}
+    </div>
+    <div class="appointment-field">
+      <strong>Status:</strong> {{ appointment.appointmentStatus }}
+    </div>
+    <div class="appointment-field">
+      <strong>Remark:</strong> {{ appointment.remark }}
+    </div>
+    <div class="appointment-actions">
+      <button (click)="updateAppointment(appointment.appointmentId)" class="btn btn-info">Update</button>
+      <button (click)="deleteAppointment(appointment.appointmentId)" class="btn btn-danger">Delete</button>
+    </div>
+  </div>
 </div>
-
